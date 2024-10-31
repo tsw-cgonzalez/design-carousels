@@ -1,0 +1,38 @@
+
+.grid {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.col {
+  padding: 0 1rem;
+}
+
+$maxCol: 12;
+@for $width from 1 through $maxCol {
+  .col--#{$width} {
+    flex-basis: $width / $maxCol * 100%;
+    max-width: $width / $maxCol * 100%;
+  }
+}
+
+$breakPoints: (
+  xs: 320,
+  md: 768,
+  lg: 1025,
+  xl: 1200,
+);
+
+@each $key, $value in $breakPoints {
+  @media screen and (min-width: $value + px) {
+    @for $width from 1 through $maxCol {
+      .col-#{$key}--#{$width} {
+        flex-basis: $width / $maxCol * 100%;
+        max-width: $width / $maxCol * 100%;
+      }
+    }
+  }
+}

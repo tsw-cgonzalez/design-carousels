@@ -1,0 +1,422 @@
+.col-two {
+    width: 100%;
+    display: grid;
+    display: flex;
+    flex-direction: column;
+    height: 500px;
+    @media (min-width: 768px) {
+        height: 250px;
+        flex-direction: row;
+    }
+    
+    .col-1 {
+        height: 250px;
+        background: black;
+        width: 100%;
+        @media (min-width: 768px) {
+            width: 400px;
+        }
+    }
+
+    .col-2 {
+        width: 100%;
+        height: 250px;
+        @media (min-width: 768px) {
+            width: calc(100% - 400px);
+        }
+        
+    }
+  
+}
+
+
+
+.swiper__animate-in {
+    width: 100%;
+    height: 570px;
+    .swiper-wrapper {
+        padding-top: 50px;
+        .swiper-slide {
+            width: initial;
+        }
+    }
+    
+    .swiper-button-next, .swiper-button-prev {
+        top: 24px;
+        animation: show 2s forwards;
+        opacity: 0;
+    }
+
+    .swiper-button-prev {
+        left: auto;
+        right: 80px;
+    }
+
+    .swiper-button-next, .swiper-button-prev {
+        &::after {
+            font-size: 24px;
+            color: var(--dark);
+        }
+        &:focus {
+            &::after {
+                color: var(--primary);
+                opacity: 1;
+            }    
+        }
+    }
+
+    .cards {
+        &.cards-animate {
+            transform: translateY(200%);
+            animation: slideIn 0.7s ease normal forwards;
+            animation-delay: calc(var(--card) * 90ms);
+        }
+    }
+
+    .swiper-pagination-clickable.swiper-pagination-bullets.swiper-pagination-horizontal {
+        animation: grow 1s ease forwards;
+        animation-delay: 1.2s;
+        transform-origin: center center !important;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 200px;
+        background: var(--dark);
+        border-radius: 15px;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 0;
+        bottom: 35px;
+
+        .swiper-pagination-bullet.swiper-pagination-bullet-active {
+            background-color: var(--primary);
+        }
+        .swiper-pagination-bullet {
+            animation: show 0.7s ease 1s forwards;
+            background-color: white
+        }
+        &::before {
+            content: "";
+            background-color: var(--primary);
+            width: 50px;
+            height: 50px;
+            display: block;
+            position: absolute;
+            border-radius: 50%;
+            animation: dot2 1s ease forwards;
+            visibility: hidden;
+            animation-delay: 0.6s;
+        }
+        &::after { 
+            content: "";
+            background-color: var(--dark);
+            width: 50px;
+            height: 50px;
+            display: block;
+            position: absolute;
+            border-radius: 50%;
+            animation: dot 1.2s ease forwards;
+            visibility: hidden;
+            animation-delay: 0.6s;
+        }
+    }
+
+    @keyframes dot {
+        0% {
+            transform: scale(0);
+            visibility: visible;
+        }
+        50% {
+            transform: scale(1.4);
+        }
+        100% {
+            transform: scale(0);
+        }
+    }
+
+    @keyframes dot2 {
+        0% {
+            transform: scale(0);
+            visibility: visible;
+        }
+        50% {
+            transform: scale(1.8);
+        }
+        100% {
+            transform: scale(0);
+        }
+    }
+
+    @keyframes grow {
+        0% {
+        width: 0;
+        
+        }
+
+        100% {
+            width: 200px;
+        }
+    }
+
+    @keyframes show {
+        0% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+
+    @keyframes slideIn {
+        0% {
+            transform: translateY(200%);
+        }
+
+        100% {
+            transform: translateY(0);
+        }
+    }
+}
+
+
+.swiper__card-deck {
+    height: 100%;
+    .cards {
+        height: 500px;
+        border-radius: 0;
+        background: #e3e3e3;
+        width: 100%;
+        // border-right: 1px solid black
+        box-shadow: 0 0 0 0.025rem black;
+
+        .card-img {
+            img {
+                width: 300px;
+                height: 100%;
+            }
+        }
+    }
+}
+
+
+
+
+// .swiper, .swiper-progress {
+//     width: 100%;
+//     height: 524px;
+//     // display: flex;
+//     // justify-content: center;
+//     // position: relative;
+//     .swiper-wrapper {
+//         padding-top: 50px;
+//         .swiper-slide {
+//             width: initial;
+//         }
+//     }
+    
+//     .swiper-button-next, .swiper-button-prev {
+//         top: 24px;
+//     }
+
+//     .swiper-button-prev {
+//         left: auto;
+//         right: 80px;
+//     }
+
+//     .swiper-button-next, .swiper-button-prev {
+//         &::after {
+//             font-size: 24px;
+//             color: var(--dark);
+//         }
+//         &:focus {
+//             &::after {
+//                 color: var(--primary);
+//                 opacity: 1;
+//             }    
+//         }
+//     }
+       
+// }
+
+// .swiper {
+//     display: flex;
+//     justify-items: center !important;
+//     .swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets.swiper-pagination-horizontal {
+//         background: blue;
+//         width: 50px;
+//         height: 50px;
+//         // display: flex;
+//         // justify-content: center;
+//         // align-items: center;
+//         animation: forwards grow 1.2s 1s ease;
+//         &::before {
+//             content: "";
+//             background-color: red;
+//             width: 50px;
+//             height: 50px;
+//             display: block;
+//             position: absolute;
+//             top: 0;
+//             left: 0;
+//             margin-left: 50%;
+//             transform: translateX(-50%);
+//             border-radius: 50%;
+//             transform-origin: center center;
+//             animation: forwards dotOutter 1.2s ease;
+//         }
+//         &::after {
+//             content: "";
+//             background-color: green;
+//             width: 50px;
+//             height: 50px;
+//             display: block;
+//             position: absolute;
+//             top: 0;
+//             left: 0;
+//             margin-left: 50%;
+//             transform: translateX(-50%);
+//             border-radius: 50%;
+//             transform-origin: center center;
+//             animation: forwards dotO 1.2s ease;
+//         }
+//         .swiper-pagination-bullet {
+//             visibility: hidden;
+//         }
+    
+//         // .swiper-pagination-bullet {
+//         //     width: 20px;
+//         //     height: 4px;
+//         //     border-radius: 0;
+//         //     background-color: var(--dark);
+//         //     &.swiper-pagination-bullet-active {
+//         //         background-color: var(--primary);
+//         //     }
+//         // }
+//     }
+// }
+
+
+// @keyframes dot {
+//     0% {
+//         transform: scale(0);
+//         left: -50%;
+//     }
+//     50% {
+//         transform: scale(1.2);
+//     }
+//     100% {
+//         transform: scale(1);
+//         left: -50%;
+//     }
+// }
+
+
+// @keyframes dotOutter {
+//     0% {
+//         transform: scale(0);
+//         left: -50%;
+//     }
+//     50% {
+//         transform: scale(2);
+//     }
+//     100% {
+//         transform: scale(0);
+//         left: -50%;
+//     }
+// }
+
+// @keyframes grow {
+//     0% {
+//       width: 0;
+//     }
+
+//     100% {
+//         transform-origin: left;
+//         width: 200px;
+//     }
+// }
+
+// //  swiper > swiper wrapper > swiper slide
+// // swiper-slide-prev
+// // swiper-slide-next
+// // swiper-slide-active
+
+// // data-swiper-slide-index="0"
+// .swiper-progress {
+ 
+//     .swiper-wrapper {
+//         display: flex;
+//         width: 100%;
+  
+//         .swiper-slide {
+
+//             &-active {
+//              border: 1px solid red;
+//             }
+//             // & .swiper-slide-prev {
+            
+//             // }
+//         }
+//     }
+//     .swiper-pagination-progressbar {
+//         // top: initial !important;
+//         // bottom: 0;
+//         // width: 15% !important;
+//         // margin-left: 50%;
+//         // transform: translateX(-50%);
+//         // background-color: var(--dark);
+//         // border-radius: 4px;
+//         .swiper-pagination-progressbar-fill {
+//             background: var(--primary);
+//             border-radius: 4px;
+//         }
+//     }
+// }
+// /*
+// 0-375 XS
+// 376-768 SM
+// 769-1439 MD
+// 1140-1919 LG
+// 1919 - Up XL
+// */
+
+
+// Bundle the swiper 
+
+/// KEEP FEB 28 2022
+/// https://web.archive.org/web/20220228235349/https://www.verizon.com/#promo-tabs
+/// 
+/// https://t-mobile.scene7.com/is/image/Tmusprod/fg-iPhone-14-yellow-4x3:4x3?fmt=png-alpha&qlt=85,0&resMode=sharp2&op_usm=1.75,0.3,2,0
+
+// .ngd-promo-carousel .Grid [data-slick] .slick-list {
+//     overflow: visible;
+// }
+
+// .slick-slider .slick-list, .slick-slider .slick-track {
+//     -webkit-transform: translateZ(0);
+//     -moz-transform: translateZ(0);
+//     -ms-transform: translateZ(0);
+//     -o-transform: translateZ(0);
+//     transform: translateZ(0);
+// }
+
+// .slick-track {
+//     position: relative;
+//     left: 0;
+//     top: 0;
+//     display: block;
+//     margin-left: auto;
+//     margin-right: auto;
+// }
+
+// @media screen and (min-width: 768px) {
+//     .ngd-promo-carousel .Grid [data-slick] .slick-list .slick-slide.slick-current .promo-slide .promo-copy {
+//         -webkit-transform: translateX(-100%);
+//         -moz-transform: translateX(-100%);
+//         -ms-transform: translateX(-100%);
+//         -o-transform: translateX(-100%);
+//         transform: translateX(-100%);
+//     }
+// }
