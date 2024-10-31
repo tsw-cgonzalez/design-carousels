@@ -14,16 +14,27 @@ export const Carousel = {
     this.carousel = new Swiper(el, {
       loop: true,
       // spaceBetween: 24,
+      navigation: {
+        enabled: false,
+        nextEl: 'swiper-button-next2',
+        prevEl: 'swiper-button-prev2',
+      },
       allowTouchMove: true,
       slidesPerView: 1,
       breakpoints: {
         320: {
           slidesPerView: 1,
         },
+        576: {
+          slidesPerView: 1,
+        },
         768: {
           slidesPerView: 2,
         },
         1024: {
+          slidesPerView: 2,
+        },
+        1200: {
           slidesPerView: 3,
         }
       },
@@ -46,7 +57,6 @@ export const Carousel = {
     })
   }
 }
-
 
 // export const Carousel2 = {
 //   init() {

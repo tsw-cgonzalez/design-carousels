@@ -1,0 +1,58 @@
+
+@import '/theme.scss';
+
+.card {
+    background-color: $primaryDark;
+    color: #FFF;
+    padding: 24px;
+    height: 500px;
+    .card__content {
+        // we need padding requirements per breakpoint
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        padding: 16px 24px;
+
+        .card__title {
+            // we need font requirements per breakpoint
+            font-size: 3rem; 
+            margin: 0;
+            font-weight: bolder;
+            line-height: 1;
+            flex: 1;
+        }
+
+        .card__cta {
+            align-content: end;
+            flex: 1;
+            .button--secondary {
+                background: transparent;
+                border: 2px solid $primaryLight;
+                color: $primaryLight;
+                cursor: pointer;
+                display: inline-block;
+                padding: 10px 16px;
+                transition: 300ms ease;
+                &:hover {
+                    background: $primaryLight;
+                    color: $primaryDark;
+                }
+            }
+        }
+    }
+
+    &.card__carousel {
+        background: $primaryWhite;
+        border-radius: 0;
+        // height: 500px;
+        width: 100%;
+            
+        .card-img {
+            img {
+                width: 300px;
+                height: 100%;
+            }
+        }
+    }
+}
+

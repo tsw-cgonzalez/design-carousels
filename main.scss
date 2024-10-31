@@ -1,9 +1,32 @@
 @import "/src/componets/grid/index.scss";
+@import "/src/componets/cards/index.scss";
+
+@font-face{
+  font-family: "TeleNeoWeb";
+  font-weight: normal;
+  src:local("TeleNeoWeb-Regular"),
+  url('/fonts/TeleNeoWeb-Regular.woff')
+}
+
+@font-face{
+  font-family: "TeleNeoWeb";
+  font-weight: bold;
+  src:local("TeleNeoWeb-Bold"),
+  url('/fonts/TeleNeoWeb-Bold.woff')
+}
+
+@font-face{
+  font-family: "TeleNeoWeb";
+  font-weight: bolder;
+  src:local("TeleNeoWeb-ExtraBold"),
+  url('/fonts/TeleNeoWeb-ExtraBold.woff')
+}
 
 html,
 body {
   margin: 0;
   font-size: 16px;
+  font-family: TeleNeoWeb;
 }
 
 * {
@@ -11,7 +34,8 @@ body {
 }
 
 .container {
-  width: 100%;
   margin: 0 auto;
+  max-width: 2000px;
   position: relative;
+  width: 100%;
 }
