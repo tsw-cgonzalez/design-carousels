@@ -2,6 +2,41 @@ $paginationHeight: 16px;
 
 .swiper {
     height: 100%;
+
+    &.swiper__overflowCenter {
+        padding: 32px 0;
+        .swiper-wrapper {
+            padding: 32px 0;
+            padding: 5px 0;
+            .swiper-slide {
+                transition: transform 0.7s ease;
+                overflow: visible;
+                position: relative;
+                &:not(.swiper-slide-active) {
+                    &::before {
+                        content: "";
+                        width: 100%;
+                        height: 100%;
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        background: #4f4f4f;
+                        display: block;
+                        opacity: 0.4;
+                    }   
+                }
+                       
+                &.swiper-slide-active {
+                    transform: scale(1.07);
+                    box-shadow: 0 0 5px 2px black;
+                    z-index: 100;
+                    background: white;
+                
+                }
+            }
+        }
+    }
+   
     .swiper-wrapper {
         height: 100%;
         .swiper-slide {

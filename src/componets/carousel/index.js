@@ -150,3 +150,50 @@ export const CarouselOverflow = {
     })
   }
 }
+
+
+export const CarouselOverflowCenter  = {
+  init() {
+    this.carouselEle = Array.from(document.querySelectorAll('.swiper__overflowCenter'))
+    this.carouselEle.map((el) => {
+      this.renderCarousel(el)
+    })
+  },
+  renderCarousel(el) {
+    this.carousel = new Swiper(el, {
+      loop: true,
+      slidesPerView: 'auto',
+      centeredSlides: true,
+      navigation: {
+        enabled: false,
+        nextEl: 'swiper-button-next2',
+        prevEl: 'swiper-button-prev2',
+      },
+      allowTouchMove: true,
+      // breakpoints: {
+      //   320: {
+      //     slidesPerView: 1,
+      //   },
+      //   1024: {
+      //     slidesPerView: 3,
+      //   },
+      //   1400: {
+      //     slidesPerView: 4,
+      //   }
+      // },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      on: {
+        init: () => {
+         console.log("inited")
+        }
+      }
+    })
+  }
+}
