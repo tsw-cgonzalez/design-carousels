@@ -17,7 +17,9 @@ $paginationHeight: 16px;
         right: 40px;
         top: 16px;
         &::after {
-            content: url(/prev.svg);
+            // this is a work around to ensure the custom svg arrows display when using the npi component within AEM
+            content: url("%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill=''%3E%3Cpath d='M12 19.6153L4.38464 12L12 4.38464L13.0692 5.43847L7.25764 11.25H19.6153V12.75H7.25764L13.0692 18.5615L12 19.6153Z'%3E%3C/path%3E%3C/svg%3E");
+            // content: url(/prev.svg);
             fill: $primaryDark;
         }
     }
@@ -25,13 +27,15 @@ $paginationHeight: 16px;
     .swiper-button-next {
         top: 16px;
         &::after {
-            content: url(/next.svg);
+            // this is a work around to ensure the custom svg arrows display when using the npi component within AEM
+            content: url("%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill=''%3E%3Cpath d='M12 19.6153L10.9308 18.5615L16.7423 12.75H4.38464V11.25H16.7423L10.9308 5.43847L12 4.38464L19.6153 12L12 19.6153Z'%3E%3C/path%3E%3C/svg%3E");
+            // content: url(/next.svg);
             fill: $primaryDark;
         }
     }
 
     .swiper-pagination {
-        bottom: 0px !important;
+        bottom: 4px !important;
         height: $paginationHeight;
         .swiper-pagination-bullet {
             background-color: $primaryDark;
