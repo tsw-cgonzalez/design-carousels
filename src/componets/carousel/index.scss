@@ -1,0 +1,46 @@
+$paginationHeight: 16px;
+
+.swiper {
+    height: 100%;
+    .swiper-wrapper {
+        height: 100%;
+        .swiper-slide {
+            box-shadow: -1px 0 0 $primaryDark;
+            height: calc(100% - $paginationHeight);
+            margin-left: -1px; // only needed if cards have border. Ensure left most card border blends with content left of carousel
+            width: initial;
+        } 
+    }
+
+    .swiper-button-prev {
+        left: initial;
+        right: 40px;
+        top: 16px;
+        &::after {
+            content: url(/public/prev.svg);
+            fill: $primaryDark;
+        }
+    }
+
+    .swiper-button-next {
+        top: 16px;
+        &::after {
+            content: url(/public/next.svg);
+            fill: $primaryDark;
+        }
+    }
+
+    .swiper-pagination {
+        bottom: 0px !important;
+        height: $paginationHeight;
+        .swiper-pagination-bullet {
+            background-color: $primaryDark;
+            border-radius: 0;
+            height: 2px;
+            width: 20px;
+            &-active {
+                height: 3px;
+            }
+        }
+    }
+}
