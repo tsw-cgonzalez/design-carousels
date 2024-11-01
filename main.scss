@@ -1,32 +1,41 @@
+@import './_theme.scss';
+@import "/src/componets/carousel/index.scss";
 @import "/src/componets/grid/index.scss";
 @import "/src/componets/cards/index.scss";
 
-@font-face{
-  font-family: "TeleNeoWeb";
-  font-weight: normal;
-  src:local("TeleNeoWeb-Regular"),
-  url('/fonts/TeleNeoWeb-Regular.woff')
+
+@font-face {
+  font-display: swap;
+  font-family: teleneo;
+  font-stretch: normal;
+  font-style: normal;
+  font-weight: 400;
+  src: url(fonts/TeleNeoWeb-Regular.woff) format("woff2")
 }
 
-@font-face{
-  font-family: "TeleNeoWeb";
-  font-weight: bold;
-  src:local("TeleNeoWeb-Bold"),
-  url('/fonts/TeleNeoWeb-Bold.woff')
+@font-face {
+  font-display: swap;
+  font-family: teleneo;
+  font-stretch: normal;
+  font-style: normal;
+  font-weight: 700;
+  src: url(/fonts/TeleNeoWeb-Bold.woff) format("woff2")
 }
 
-@font-face{
-  font-family: "TeleNeoWeb";
-  font-weight: bolder;
-  src:local("TeleNeoWeb-ExtraBold"),
-  url('/fonts/TeleNeoWeb-ExtraBold.woff')
+@font-face {
+  font-display: swap;
+  font-family: teleneo;
+  font-stretch: normal;
+  font-style: normal;
+  font-weight: 800;
+  src: url(/fonts/TeleNeoWeb-ExtraBold.woff) format("woff2")
 }
 
 html,
 body {
   margin: 0;
   font-size: 16px;
-  font-family: TeleNeoWeb;
+  font-family: teleneo;
 }
 
 * {
@@ -35,7 +44,16 @@ body {
 
 .container {
   margin: 0 auto;
-  max-width: 2000px;
+  max-width: 1654px;
   position: relative;
   width: 100%;
 }
+
+
+
+// 1654
+// 599
+// 600
+// 1023
+// 1024
+// 1279
