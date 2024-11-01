@@ -70,7 +70,51 @@
                 }
             }
 
-            .card__product-offer {
+            .card__product-headline {
+                p { 
+                    font-size: 1.5rem;
+                    font-weight: 900;
+                    margin: 0 0 1rem 0;
+                }
+            }
+
+            .card__product-legal {
+                p { 
+                    font-size: 0.9rem;
+                    margin: 0;
+                    color: $lightGrey;
+                }
+
+            }
+        }
+
+        .card__product-visual {
+            display: flex;
+            height: 270px;
+            justify-content: center;
+            overflow: hidden;
+            img {
+                height: 100%;
+                width: auto;
+            }   
+        }
+    }
+    &.card__product-offer--fixed {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        width: 300px;
+        .card__product-content {
+            flex: 1;
+            .card__product-eyebrow {
+                p { 
+                    font-size: 1.5rem;
+                    font-weight: 700;
+                    margin: 0 0 1rem 0;
+                }
+            }
+
+            .card__product-headline {
                 p { 
                     font-size: 1.5rem;
                     font-weight: 900;

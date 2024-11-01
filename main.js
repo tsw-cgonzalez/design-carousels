@@ -1,4 +1,6 @@
 import './main.scss';
-import { Carousel } from "./src/componets/carousel"
+import { Carousel, CarouselAuto, CarouselOverflow } from "./src/componets/carousel"
 
 Carousel.init()
+CarouselAuto.init()
+CarouselOverflow.init()
