@@ -17,7 +17,7 @@ $paginationHeight: 16px;
         right: 40px;
         top: 16px;
         &::after {
-            content: url(/public/prev.svg);
+            content: url(/prev.svg);
             fill: $primaryDark;
         }
     }
@@ -25,7 +25,7 @@ $paginationHeight: 16px;
     .swiper-button-next {
         top: 16px;
         &::after {
-            content: url(/public/next.svg);
+            content: url(/next.svg);
             fill: $primaryDark;
         }
     }
