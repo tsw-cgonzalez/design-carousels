@@ -4,7 +4,7 @@ import 'swiper/css/bundle';
 
 export const Carousel = {
   init() {
-    this.carouselEle = Array.from(document.querySelectorAll('.swiper__card-deck'))
+    this.carouselEle = Array.from(document.querySelectorAll('.swiper__columns'))
     this.carouselEle.map((el) => {
       this.renderCarousel(el)
     })
@@ -12,12 +12,6 @@ export const Carousel = {
   renderCarousel(el) {
     this.carousel = new Swiper(el, {
       loop: true,
-      // spaceBetween: 24,
-      navigation: {
-        enabled: false,
-        nextEl: 'swiper-button-next2',
-        prevEl: 'swiper-button-prev2',
-      },
       allowTouchMove: true,
       slidesPerView: 1,
       breakpoints: {
@@ -60,30 +54,14 @@ export const CarouselAuto = {
   },
   renderCarousel(el) {
     this.carousel = new Swiper(el, {
-      loop: true,
-      delay: 100,
-      speed: 250,
-      pauseOnMouseEnter: true,
-      waitForTransition: true,
-      autoplay: true,
-      navigation: {
-        enabled: false,
-        nextEl: 'swiper-button-next2',
-        prevEl: 'swiper-button-prev2',
-      },
       allowTouchMove: true,
+      autoplay: true,
+      delay: 100,
+      loop: true,
+      pauseOnMouseEnter: true,
       slidesPerView: "auto",
-      // breakpoints: {
-      //   320: {
-      //     slidesPerView: 1,
-      //   },
-      //   1024: {
-      //     slidesPerView: 3,
-      //   },
-      //   1400: {
-      //     slidesPerView: 4,
-      //   }
-      // },
+      speed: 1000,
+      waitForTransition: true,
       pagination: {
         el: ".swiper-pagination",
         clickable: true,
@@ -100,7 +78,6 @@ export const CarouselAuto = {
     })
   }
 }
-
 export const CarouselOverflow = {
   init() {
     this.carouselEle = Array.from(document.querySelectorAll('.swiper__overflow'))
@@ -110,30 +87,14 @@ export const CarouselOverflow = {
   },
   renderCarousel(el) {
     this.carousel = new Swiper(el, {
-      loop: true,
-      slidesPerView: 'auto',
-      delay: 200,
-      speed: 350,
-      pauseOnMouseEnter: true,
-      waitForTransition: true,
-      autoplay: true,
-      navigation: {
-        enabled: false,
-        nextEl: 'swiper-button-next2',
-        prevEl: 'swiper-button-prev2',
-      },
       allowTouchMove: true,
-      // breakpoints: {
-      //   320: {
-      //     slidesPerView: 1,
-      //   },
-      //   1024: {
-      //     slidesPerView: 3,
-      //   },
-      //   1400: {
-      //     slidesPerView: 4,
-      //   }
-      // },
+      autoplay: true,
+      delay: 100,      
+      loop: true,
+      pauseOnMouseEnter: true,
+      slidesPerView: 'auto',
+      speed: 700,
+      waitForTransition: true,
       pagination: {
         el: ".swiper-pagination",
         clickable: true,
@@ -150,37 +111,20 @@ export const CarouselOverflow = {
     })
   }
 }
-
-
-export const CarouselOverflowCenter  = {
+export const CarouselShadowBox = {
   init() {
-    this.carouselEle = Array.from(document.querySelectorAll('.swiper__overflowCenter'))
+    this.carouselEle = Array.from(document.querySelectorAll('.swiper__shadow-box'))
+    
     this.carouselEle.map((el) => {
       this.renderCarousel(el)
     })
   },
   renderCarousel(el) {
     this.carousel = new Swiper(el, {
+      allowTouchMove: true,
+      centeredSlides: true,
       loop: true,
       slidesPerView: 'auto',
-      centeredSlides: true,
-      navigation: {
-        enabled: false,
-        nextEl: 'swiper-button-next2',
-        prevEl: 'swiper-button-prev2',
-      },
-      allowTouchMove: true,
-      // breakpoints: {
-      //   320: {
-      //     slidesPerView: 1,
-      //   },
-      //   1024: {
-      //     slidesPerView: 3,
-      //   },
-      //   1400: {
-      //     slidesPerView: 4,
-      //   }
-      // },
       pagination: {
         el: ".swiper-pagination",
         clickable: true,
@@ -191,7 +135,7 @@ export const CarouselOverflowCenter  = {
       },
       on: {
         init: () => {
-         console.log("inited")
+         console.log("shadow box inited")
         }
       }
     })
